@@ -1,0 +1,11 @@
+---
+title: "Suicide in Nigeria"
+author: "by Gift David"
+format:
+  dashboard:
+    logo: assets/images/osl-color-horizontal.png
+    nav-buttons:
+      - icon: file
+        title: report
+        href: https://docs.google.com/document/d/15hE46jFvj5pnw4lbcJsg3NOOu0spqng-XktD4CuAUO4/edit?usp=sharing
+---
