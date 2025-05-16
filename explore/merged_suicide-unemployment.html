@@ -132,8 +132,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link" href="../report.html"> 
+<span class="menu-text">Report</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -181,19 +181,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="7c1df41d-6417-4daf-a407-23527f215545" class="cell" data-execution_count="5">
+<div id="7c1df41d-6417-4daf-a407-23527f215545" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="dff91016-2ed1-453b-95c6-420a3429456a" class="cell" data-execution_count="7">
+<div id="dff91016-2ed1-453b-95c6-420a3429456a" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>unemployment_data <span class="op">=</span> pd.read_csv(<span class="st">"../data/unemployed.csv"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>nigerian_suicide_cases <span class="op">=</span> pd.read_csv(<span class="st">"../data/nigerian_suicide_cases.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="4ece0525-38ce-4c14-a534-8cf0989465fc" class="cell" data-execution_count="8">
+<div id="4ece0525-38ce-4c14-a534-8cf0989465fc" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>unemployment_data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <div>
 
 
@@ -261,9 +261,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="724cc171-9e66-44f9-9110-58a28555eb1d" class="cell" data-execution_count="9">
+<div id="724cc171-9e66-44f9-9110-58a28555eb1d" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>nigerian_suicide_cases.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <div>
 
 
@@ -397,21 +397,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="dc2aeabf-9e80-4a44-8c53-4f98327f0ab9" class="cell" data-execution_count="10">
+<div id="dc2aeabf-9e80-4a44-8c53-4f98327f0ab9" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(unemployment_data), <span class="bu">len</span>(nigerian_suicide_cases)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>(4563, 93)</code></pre>
 </div>
 </div>
 <section id="prepare-data" class="level1">
 <h1>PREPARE DATA</h1>
-<div id="e076219b-3b52-46a7-8786-d202d55e0e78" class="cell" data-execution_count="11">
+<div id="e076219b-3b52-46a7-8786-d202d55e0e78" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>nigerian_suicide_cases.drop(columns<span class="op">=</span>[<span class="st">'Unnamed: 0'</span>], inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="0f06c5df-17c9-4b07-9423-5401bce6e379" class="cell" data-execution_count="12">
+<div id="0f06c5df-17c9-4b07-9423-5401bce6e379" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>nigerian_suicide_cases[<span class="st">'Date'</span>] <span class="op">=</span> nigerian_suicide_cases[<span class="st">'DIM_TIME'</span>].copy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="3c4b4611-6c9e-4db3-b166-522f1907ff61" class="cell" data-execution_count="19">
+<div id="3c4b4611-6c9e-4db3-b166-522f1907ff61" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>(nigerian_suicide_cases[<span class="st">"DIM_TIME"</span>].unique()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]</code></pre>
@@ -420,13 +420,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="63c8d12b-fde4-4a71-b623-b967d28694d5" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>unemployment_data[<span class="st">"indicator"</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
-<pre><code>array(['Total Unemployed'], dtype=object)</code></pre>
+<pre><code>array(['LABOUR FORCE POPULATION (employment age and decided to work)',
+       'Work 40+ Hours, Full Time Employed',
+       'Work 20-39 Hours, Under Employed', 'Work 1-19 Hours, Unemployed',
+       'Work 0 Hours(Did Nothing), Unemployed', 'Total Unemployed',
+       'Old Nigeria', 'New Nigeria', 'International',
+       'Under Employement Rate', "Net Total people Employed ('000)",
+       "Net Part-time/ (Time-related underemployed) ('000)",
+       "Net Full Time Employed ('000)",
+       "Not in Labour Force ('000) (Employment age but decided not to work yet)",
+       "Labour Force Population ('000)", "Working Age Population ('000)",
+       'Total Number Employed (Full+Part time/Underemloyed)'],
+      dtype=object)</code></pre>
 </div>
 </div>
-<div id="3dad6395-c119-47bc-8856-8f6817dfaadc" class="cell" data-execution_count="24">
+<div id="3dad6395-c119-47bc-8856-8f6817dfaadc" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>unemployment_data <span class="op">=</span> (unemployment_data[unemployment_data[<span class="st">"indicator"</span>] <span class="op">==</span> <span class="st">"Total Unemployed"</span>]).sort_values(<span class="st">'Date'</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>unemployment_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div class="cell-output cell-output-display" data-execution_count="22">
 <div>
 
 
@@ -456,22 +467,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td data-quarto-table-cell-role="th">1</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>25-34</td>
-<td>Persons</td>
-<td>2010</td>
-<td>8.741977e+05</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Nigeria</td>
-<td>Total Unemployed</td>
 <td>Below primary</td>
 <td>Persons</td>
 <td>2010</td>
 <td>1.054442e+05</td>
 </tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
 <td>Primary</td>
@@ -479,14 +481,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>2010</td>
 <td>8.116727e+05</td>
 </tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
 <td>Secondary</td>
 <td>Persons</td>
 <td>2010</td>
 <td>1.170617e+06</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>Post Secondary</td>
+<td>Persons</td>
+<td>2010</td>
+<td>3.938350e+05</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -501,13 +512,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td data-quarto-table-cell-role="th">422</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
+<td>Secondary</td>
+<td>Persons</td>
+<td>2020Q4</td>
+<td>9.863363e+06</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">423</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
 <td>Rural</td>
 <td>Persons</td>
 <td>2020Q4</td>
 <td>1.490120e+07</td>
 </tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">423</td>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">424</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
 <td>Post Secondary</td>
@@ -515,23 +535,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>2020Q4</td>
 <td>4.611990e+06</td>
 </tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">424</td>
-<td>Nigeria</td>
-<td>Total Unemployed</td>
-<td>45-54</td>
-<td>Persons</td>
-<td>2020Q4</td>
-<td>3.379825e+06</td>
-</tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">425</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>35-44</td>
+<td>Never Attended</td>
 <td>Persons</td>
 <td>2020Q4</td>
-<td>5.232420e+06</td>
+<td>5.860110e+06</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">426</td>
@@ -555,10 +566,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>427</code></pre>
 </div>
 </div>
-<div id="3c9bca91-1b9e-44bd-ae0e-13d0d377b53e" class="cell" data-execution_count="25">
+<div id="3c9bca91-1b9e-44bd-ae0e-13d0d377b53e" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sui_mask <span class="op">=</span> nigerian_suicide_cases[[<span class="st">'DIM_TIME'</span>,<span class="st">'RATE_PER_100000_N'</span>,<span class="st">'DIM_SEX'</span>,<span class="st">'DIM_AGE'</span>,<span class="st">'Date'</span>,<span class="st">'GEO_NAME_SHORT'</span>]]</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>sui_mask</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="25">
+<div class="cell-output cell-output-display" data-execution_count="24">
 <div>
 
 
@@ -681,7 +692,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="7e13eb05-9b46-4e80-a990-c474e8bfcb3e" class="cell" data-execution_count="27">
+<div id="7e13eb05-9b46-4e80-a990-c474e8bfcb3e" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"unemployment_data Date dtype:"</span>, unemployment_data[<span class="st">'Date'</span>].dtype)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"sui_mask Date dtype:"</span>, sui_mask[<span class="st">'Date'</span>].dtype)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -689,14 +700,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 sui_mask Date dtype: int64</code></pre>
 </div>
 </div>
-<div id="0bf70b95-723c-4a6b-9eda-c2a8b2d4cedd" class="cell" data-execution_count="30">
+<div id="0bf70b95-723c-4a6b-9eda-c2a8b2d4cedd" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>unemployment_data.loc[:, <span class="st">'Date'</span>] <span class="op">=</span> unemployment_data[<span class="st">'Date'</span>].astype(<span class="bu">str</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sui_mask.loc[:, <span class="st">'Date'</span>] <span class="op">=</span> sui_mask[<span class="st">'Date'</span>].astype(<span class="bu">str</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="79224147-9370-4147-96f9-a97b07616ea0" class="cell" data-execution_count="31">
+<div id="79224147-9370-4147-96f9-a97b07616ea0" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>merged_su1 <span class="op">=</span> unemployment_data.merge(sui_mask, on<span class="op">=</span><span class="st">'Date'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>merged_su1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="31">
+<div class="cell-output cell-output-display" data-execution_count="27">
 <div>
 
 
@@ -764,10 +775,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">3</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>25-34</td>
+<td>Below primary</td>
 <td>Persons</td>
 <td>2010</td>
-<td>8.741977e+05</td>
+<td>1.054442e+05</td>
 <td>2010</td>
 <td>6.36</td>
 <td>MALE</td>
@@ -778,10 +789,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">4</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>25-34</td>
+<td>Below primary</td>
 <td>Persons</td>
 <td>2010</td>
-<td>8.741977e+05</td>
+<td>1.054442e+05</td>
 <td>2010</td>
 <td>4.40</td>
 <td>TOTAL</td>
@@ -806,10 +817,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">172</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>Never Attended</td>
+<td>Urban</td>
 <td>Persons</td>
 <td>2013</td>
-<td>2.154951e+06</td>
+<td>2.278265e+06</td>
 <td>2013</td>
 <td>5.88</td>
 <td>MALE</td>
@@ -820,10 +831,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">173</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>Never Attended</td>
+<td>Urban</td>
 <td>Persons</td>
 <td>2013</td>
-<td>2.154951e+06</td>
+<td>2.278265e+06</td>
 <td>2013</td>
 <td>2.18</td>
 <td>FEMALE</td>
@@ -834,10 +845,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">174</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>All Groups</td>
+<td>15-24</td>
 <td>Persons</td>
 <td>2013</td>
-<td>7.078454e+06</td>
+<td>2.466218e+06</td>
 <td>2013</td>
 <td>4.05</td>
 <td>TOTAL</td>
@@ -848,10 +859,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">175</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>All Groups</td>
+<td>15-24</td>
 <td>Persons</td>
 <td>2013</td>
-<td>7.078454e+06</td>
+<td>2.466218e+06</td>
 <td>2013</td>
 <td>5.88</td>
 <td>MALE</td>
@@ -862,10 +873,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">176</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>All Groups</td>
+<td>15-24</td>
 <td>Persons</td>
 <td>2013</td>
-<td>7.078454e+06</td>
+<td>2.466218e+06</td>
 <td>2013</td>
 <td>2.18</td>
 <td>FEMALE</td>
@@ -879,10 +890,10 @@ sui_mask Date dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="b5555d3a-c9db-472d-ad59-ba218f6987fb" class="cell" data-execution_count="31">
+<div id="b5555d3a-c9db-472d-ad59-ba218f6987fb" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>merged_su1 <span class="op">=</span> unemployment_data.merge(sui_mask, on<span class="op">=</span><span class="st">'Date'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>merged_su1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="31">
+<div class="cell-output cell-output-display" data-execution_count="28">
 <div>
 
 
@@ -950,10 +961,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">3</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>25-34</td>
+<td>Below primary</td>
 <td>Persons</td>
 <td>2010</td>
-<td>8.741977e+05</td>
+<td>1.054442e+05</td>
 <td>2010</td>
 <td>6.36</td>
 <td>MALE</td>
@@ -964,10 +975,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">4</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>25-34</td>
+<td>Below primary</td>
 <td>Persons</td>
 <td>2010</td>
-<td>8.741977e+05</td>
+<td>1.054442e+05</td>
 <td>2010</td>
 <td>4.40</td>
 <td>TOTAL</td>
@@ -992,10 +1003,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">172</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>Never Attended</td>
+<td>Urban</td>
 <td>Persons</td>
 <td>2013</td>
-<td>2.154951e+06</td>
+<td>2.278265e+06</td>
 <td>2013</td>
 <td>5.88</td>
 <td>MALE</td>
@@ -1006,10 +1017,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">173</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>Never Attended</td>
+<td>Urban</td>
 <td>Persons</td>
 <td>2013</td>
-<td>2.154951e+06</td>
+<td>2.278265e+06</td>
 <td>2013</td>
 <td>2.18</td>
 <td>FEMALE</td>
@@ -1020,10 +1031,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">174</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>All Groups</td>
+<td>15-24</td>
 <td>Persons</td>
 <td>2013</td>
-<td>7.078454e+06</td>
+<td>2.466218e+06</td>
 <td>2013</td>
 <td>4.05</td>
 <td>TOTAL</td>
@@ -1034,10 +1045,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">175</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>All Groups</td>
+<td>15-24</td>
 <td>Persons</td>
 <td>2013</td>
-<td>7.078454e+06</td>
+<td>2.466218e+06</td>
 <td>2013</td>
 <td>5.88</td>
 <td>MALE</td>
@@ -1048,10 +1059,10 @@ sui_mask Date dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">176</td>
 <td>Nigeria</td>
 <td>Total Unemployed</td>
-<td>All Groups</td>
+<td>15-24</td>
 <td>Persons</td>
 <td>2013</td>
-<td>7.078454e+06</td>
+<td>2.466218e+06</td>
 <td>2013</td>
 <td>2.18</td>
 <td>FEMALE</td>
@@ -1065,13 +1076,13 @@ sui_mask Date dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="79372313-24f8-4a56-80f3-9822cab0eadf" class="cell" data-execution_count="33">
+<div id="79372313-24f8-4a56-80f3-9822cab0eadf" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Merged rows:"</span>, <span class="bu">len</span>(merged_su1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Merged rows: 177</code></pre>
 </div>
 </div>
-<div id="2c6810d2-aa60-48d9-bac1-60245ce3f2af" class="cell" data-execution_count="34">
+<div id="2c6810d2-aa60-48d9-bac1-60245ce3f2af" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_su1[<span class="st">'Date'</span>].unique())</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_su1.isnull().<span class="bu">sum</span>())  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1090,7 +1101,7 @@ GEO_NAME_SHORT       0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="6d6497dc-ae46-4a5d-9990-4b20cbd25f20" class="cell" data-execution_count="49">
+<div id="6d6497dc-ae46-4a5d-9990-4b20cbd25f20" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check columns and data types</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_su1.columns.tolist())</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_su1[[<span class="st">'Value'</span>, <span class="st">'RATE_PER_100000_N'</span>, <span class="st">'Date'</span>, <span class="st">'DIM_SEX'</span>, <span class="st">'GEO_NAME_SHORT'</span>]].describe())</span>
@@ -1119,7 +1130,7 @@ dtype: int64</code></pre>
 </section>
 <section id="scatter-plot" class="level1">
 <h1>scatter plot</h1>
-<div id="f822a412-764e-4818-85ea-d4c0e58b29ba" class="cell" data-execution_count="37">
+<div id="f822a412-764e-4818-85ea-d4c0e58b29ba" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
@@ -1147,7 +1158,7 @@ dtype: int64</code></pre>
 </section>
 <section id="line-plot" class="level1">
 <h1>line plot</h1>
-<div id="404a71d2-2331-4c02-acd4-005ed8bd901a" class="cell" data-execution_count="38">
+<div id="404a71d2-2331-4c02-acd4-005ed8bd901a" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Aggregate data by Date (year)</span></span>
@@ -1205,7 +1216,7 @@ dtype: int64</code></pre>
 </section>
 <section id="bar-chart" class="level1">
 <h1>bar chart</h1>
-<div id="1bcb4a44-346b-401b-afb7-ab7145a4bc3c" class="cell" data-execution_count="42">
+<div id="1bcb4a44-346b-401b-afb7-ab7145a4bc3c" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">6</span>), sharex<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Unemployment</span></span>
@@ -1271,7 +1282,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="0536d657-dd47-433b-b0fe-0dd0251eecbf" class="cell" data-execution_count="47">
+<div id="0536d657-dd47-433b-b0fe-0dd0251eecbf" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Unemployment distribution</span></span>
@@ -1294,7 +1305,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="ae88e58a-5251-41c1-8d94-f6c0ca0a0403" class="cell" data-execution_count="53">
+<div id="ae88e58a-5251-41c1-8d94-f6c0ca0a0403" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Pearson correlation (linear relationship)</span></span>
@@ -1309,7 +1320,7 @@ dtype: int64</code></pre>
 Spearman Correlation: -0.10, p-value: 0.1673</code></pre>
 </div>
 </div>
-<div id="f91a366c-aac4-49d1-9c6b-36d61f2f1af9" class="cell" data-execution_count="55">
+<div id="f91a366c-aac4-49d1-9c6b-36d61f2f1af9" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
@@ -1333,7 +1344,7 @@ Spearman Correlation: -0.10, p-value: 0.1673</code></pre>
 </div>
 </div>
 </div>
-<div id="57a80e57-8567-46f8-b29a-59600e36cb70" class="cell" data-execution_count="57">
+<div id="57a80e57-8567-46f8-b29a-59600e36cb70" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: By gender</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>sns.lmplot(</span>
@@ -1358,7 +1369,7 @@ Spearman Correlation: -0.10, p-value: 0.1673</code></pre>
 </div>
 </div>
 </div>
-<div id="a67e44b8-f57e-4f58-8c6b-d457c6660a76" class="cell" data-execution_count="58">
+<div id="a67e44b8-f57e-4f58-8c6b-d457c6660a76" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -1390,7 +1401,7 @@ Spearman Correlation: -0.10, p-value: 0.1673</code></pre>
 </div>
 </div>
 </div>
-<div id="3d67ea91-88cd-4f9d-9979-bf873384b63b" class="cell" data-execution_count="59">
+<div id="3d67ea91-88cd-4f9d-9979-bf873384b63b" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Assume df is your full DataFrame</span></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>df_total <span class="op">=</span> unemployment_data[unemployment_data[<span class="st">'indicator'</span>] <span class="op">==</span> <span class="st">'Total Unemployed'</span>].copy()</span>
@@ -1404,8 +1415,8 @@ Spearman Correlation: -0.10, p-value: 0.1673</code></pre>
 <span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df_total,</span>
 <span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'Year'</span>,</span>
 <span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'Value'</span>,</span>
-<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">'group'</span>,</span>
-<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">=</span><span class="st">'o'</span></span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">#hue='group',</span></span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">#marker='o'</span></span>
 <span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Total Unemployed in Nigeria by Group"</span>)</span>
 <span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Number of People"</span>)</span>
@@ -1425,10 +1436,274 @@ Spearman Correlation: -0.10, p-value: 0.1673</code></pre>
 </div>
 </div>
 </div>
+<div id="40924f8d-2f91-497f-aaf5-7e15b6fb620b" class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>df_total.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="44">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">indicator</th>
+<th data-quarto-table-cell-role="th">group</th>
+<th data-quarto-table-cell-role="th">Unit</th>
+<th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th">Value</th>
+<th data-quarto-table-cell-role="th">Year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>All Groups</td>
+<td>Persons</td>
+<td>2010</td>
+<td>3.318425e+06</td>
+<td>2010</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>Below primary</td>
+<td>Persons</td>
+<td>2010</td>
+<td>1.054442e+05</td>
+<td>2010</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>Primary</td>
+<td>Persons</td>
+<td>2010</td>
+<td>8.116727e+05</td>
+<td>2010</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>Secondary</td>
+<td>Persons</td>
+<td>2010</td>
+<td>1.170617e+06</td>
+<td>2010</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>Post Secondary</td>
+<td>Persons</td>
+<td>2010</td>
+<td>3.938350e+05</td>
+<td>2010</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="47da25bf-044d-48ba-8fbd-83c76cfdb56a" class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>merged_su1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="45">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">indicator</th>
+<th data-quarto-table-cell-role="th">group</th>
+<th data-quarto-table-cell-role="th">Unit</th>
+<th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th">Value</th>
+<th data-quarto-table-cell-role="th">DIM_TIME</th>
+<th data-quarto-table-cell-role="th">RATE_PER_100000_N</th>
+<th data-quarto-table-cell-role="th">DIM_SEX</th>
+<th data-quarto-table-cell-role="th">DIM_AGE</th>
+<th data-quarto-table-cell-role="th">GEO_NAME_SHORT</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>All Groups</td>
+<td>Persons</td>
+<td>2010</td>
+<td>3.318425e+06</td>
+<td>2010</td>
+<td>6.36</td>
+<td>MALE</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>All Groups</td>
+<td>Persons</td>
+<td>2010</td>
+<td>3.318425e+06</td>
+<td>2010</td>
+<td>4.40</td>
+<td>TOTAL</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>All Groups</td>
+<td>Persons</td>
+<td>2010</td>
+<td>3.318425e+06</td>
+<td>2010</td>
+<td>2.40</td>
+<td>FEMALE</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>Below primary</td>
+<td>Persons</td>
+<td>2010</td>
+<td>1.054442e+05</td>
+<td>2010</td>
+<td>6.36</td>
+<td>MALE</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>Below primary</td>
+<td>Persons</td>
+<td>2010</td>
+<td>1.054442e+05</td>
+<td>2010</td>
+<td>4.40</td>
+<td>TOTAL</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">172</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>Urban</td>
+<td>Persons</td>
+<td>2013</td>
+<td>2.278265e+06</td>
+<td>2013</td>
+<td>5.88</td>
+<td>MALE</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">173</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>Urban</td>
+<td>Persons</td>
+<td>2013</td>
+<td>2.278265e+06</td>
+<td>2013</td>
+<td>2.18</td>
+<td>FEMALE</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">174</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>15-24</td>
+<td>Persons</td>
+<td>2013</td>
+<td>2.466218e+06</td>
+<td>2013</td>
+<td>4.05</td>
+<td>TOTAL</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">175</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>15-24</td>
+<td>Persons</td>
+<td>2013</td>
+<td>2.466218e+06</td>
+<td>2013</td>
+<td>5.88</td>
+<td>MALE</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">176</td>
+<td>Nigeria</td>
+<td>Total Unemployed</td>
+<td>15-24</td>
+<td>Persons</td>
+<td>2013</td>
+<td>2.466218e+06</td>
+<td>2013</td>
+<td>2.18</td>
+<td>FEMALE</td>
+<td>TOTAL</td>
+<td>Nigeria</td>
+</tr>
+</tbody>
+</table>
+
+<p>177 rows × 11 columns</p>
+</div>
+</div>
+</div>
 <div id="304ffde6-49a7-4fee-86ad-2fa68cb3c99a" class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_su1[[<span class="st">'indicator'</span>, <span class="st">'Unit'</span>]].drop_duplicates())</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Hypothetical: Replace 'Population' with actual population column</span></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>merged_su1[<span class="st">'Value'</span>] <span class="op">=</span> (merged[<span class="st">'Value'</span>] <span class="op">/</span> merged[<span class="st">'Population'</span>]) <span class="op">*</span> <span class="dv">100000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(merged_su1[[<span class="st">'indicator'</span>, <span class="st">'Unit'</span>]].drop_duplicates())</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Hypothetical: Replace 'Population' with actual population column</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>merged_su1[<span class="st">'Value'</span>] <span class="op">=</span> (merged[<span class="st">'Value'</span>] <span class="op">/</span> merged[<span class="st">'Population'</span>]) <span class="op">*</span> <span class="dv">100000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="15415825-6634-455d-b3aa-68c8d265f1af" class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>relationship btw tsuicide rate <span class="kw">and</span> year </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
